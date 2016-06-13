@@ -1,3 +1,102 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$yellow: #f1c40f;
+
+.comments_wrapper {
+  display: block;
+  margin: 80px auto;
+  width: 40%;
+  color: #7f8c8d;
+  // border: 2px solid blue;
+
+
+  .post_comment {
+    display: inline-block;
+    margin-bottom: 40px;
+  }
+
+  #show_comment_form {
+    font-weight: 400;
+    cursor: pointer;
+    padding: 5px 5px;
+    border-radius: 4px;
+    color: $yellow;
+    border: 2px solid $yellow;
+    text-align: center;
+    font-size: 12px;
+    margin: 0 0 20px 5px;
+    &:hover {
+      color: white;
+      background-color: $yellow;
+    }
+  }
+
+  form {
+    padding: 0 0 40px 0;
+    label {
+      font-size: 14px;
+      margin: 10px 0px 0 60px;
+      position: absolute;
+      // border: 2px solid blue;
+
+    }
+    input,
+    textarea {
+      padding: 10px;
+      width: 50%;
+      margin: 0 150px;
+      // border: 2px solid blue;
+
+    }
+    textarea {
+      height: 80px;
+    }
+
+    .submit_comment_btn {
+      width: 30%;
+      margin: 0 150px;
+      cursor: pointer;
+      padding: 10px 5px;
+      border-radius: 4px;
+      color: $yellow;
+      border: 2px solid $yellow;
+      text-align: center;
+      font-size: 14px;
+      background-color: white;
+      font-weight: 800;
+      &:hover {
+        color: white;
+        background-color: #f1c40f;
+      }
+    }
+  }
+
+  h3 {
+    margin: 0px 0 0 0;
+    font-size: 16px;
+  }
+
+  .comment {
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+
+    h4 {
+      margin: 0px 0 0 0;
+      font-size: 14px;
+      color: $yellow;
+    }
+
+    .time_stamp {
+      margin: 0;
+      font-size: 10px;
+    }
+
+    .comment {
+      font-size: 14px;
+      padding: 0;
+    }
+  }
+}

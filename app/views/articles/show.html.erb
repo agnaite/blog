@@ -1,16 +1,12 @@
-<h1><%= @article.title %></h1>
-
 <div class="container">
+  <h1><%= @article.title %></h1>
 
-  <p class="article_body"><%= @article.body %>
+  <p class="article_body"><%= @article.body %></p>
 
-    <div class="article_btn_group">
-      <%= link_to "Edit", edit_article_path(@article), class: "edit_btn" %>
-      <%= link_to "Delete", article_path(@article), method: :delete, class: "delete_btn", data: {confirm: "Really delete the article?"} %>
-    </div>
-
-  </p>
-
+  <div class="article_btn_group">
+    <%= link_to "Edit", edit_article_path(@article), class: "edit_btn" %>
+    <%= link_to "Delete", article_path(@article), method: :delete, class: "delete_btn", data: {confirm: "Really delete the article?"} %>
+  </div>
 
   <div class="comments_wrapper">
 
