@@ -1,0 +1,46 @@
+$yellow: #f1c40f;
+
+.form_wrapper {
+  padding-top: 40px;
+  margin: 0 auto;
+  width: 40%;
+
+  p {
+    label {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    input,
+    textarea {
+      font-size: 12px;
+      width: 100%;
+      padding: 10px 5px;
+    }
+  }
+
+  .form_body {
+    textarea {
+      height: 200px;
+    }
+  }
+
+  input.submit_btn {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+    background-color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    color: $yellow;
+    border: 2px solid $yellow;
+    text-align: center;
+    font-size: 16px;
+
+    &:hover {
+      cursor: pointer;
+      color: white;
+      background-color: $yellow;
+    }
+  }
+}

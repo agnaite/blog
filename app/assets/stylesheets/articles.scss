@@ -1,6 +1,7 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$yellow: #f1c40f;
 
 * {
   font-family: 'Menlo', sans-serif;
@@ -11,6 +12,18 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
+  display: inline-block;
+
+  .flash {
+    display: block;
+    width: 30%;
+    margin: 20px auto;
+    color: tomato;
+    text-align: center;
+    border: 2px solid tomato;
+    padding: 10px;
+    border-radius: 5px;
+  }
 
   h1 {
     padding: 20px;
