@@ -11,12 +11,12 @@
   <% end %>
 
   <p class="article_body"><%= @article.body %></p>
-
-  <div class="article_btn_group">
-    <%= link_to "Edit", edit_article_path(@article), class: "edit_btn" %>
-    <%= link_to "Delete", article_path(@article), method: :delete, class: "delete_btn", data: {confirm: "Really delete the article?"} %>
-  </div>
-
+  <% if logged_in? %>
+    <div class="article_btn_group">
+      <%= link_to "Edit", edit_article_path(@article), class: "edit_btn" %>
+      <%= link_to "Delete", article_path(@article), method: :delete, class: "delete_btn", data: {confirm: "Really delete the article?"} %>
+    </div>
+  <% end %>
   <div class="comments_wrapper">
 
     <%= render partial: 'comments/form' %>

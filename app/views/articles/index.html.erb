@@ -7,7 +7,9 @@
       </li>
     <% end %>
   </ul>
-  <%= link_to "Create new article", new_article_path, class: 'new_article_link' %>
+  <% if logged_in? %>
+    <%= link_to "Create new article", new_article_path, class: 'new_article_link' %>
+  <% end %>
   <%= link_to "See all tags", tags_path, class: 'tags_link' %>
 
 </div>
