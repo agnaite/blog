@@ -9,7 +9,7 @@ $cloud: #ecf0f1;
 .container {
   .article_tag_list {
     display: block;
-    margin: -30px auto 40px auto;
+    margin: 5px auto 40px auto;
     width: 20%;
     padding: 0;
     text-align: center;
@@ -52,6 +52,10 @@ $cloud: #ecf0f1;
       padding: 5px 15px;
       line-height: 2.5;
       font-size: 18px;
+      &:hover {
+        border-color: $yellow;
+        background-color: $yellow;
+      }
     }
   }
 }

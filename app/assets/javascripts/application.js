@@ -11,22 +11,24 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
 $(function() {
   $(document).ready(function(){
-
     $('.month_dropdown').click(function(){
       var list = $(this).next();
       list.toggle();
-      console.log(list)
-      if ($('.month_articles').is(':visible')) {
-        $(this).html("∨");
+
+      if (list.is(':visible')) {
+        $(this).css('background-color', '#f1c40f');
+        $(this).css('border-color', '#f1c40f');
       }
       else {
-        $(this).html(">");
+        $(this).css('background-color', '#16a388');
+        $(this).css('border-color', '#16a388');
       }
     });
 
@@ -57,12 +59,14 @@ function initPage() {
     $('.month_dropdown').click(function(){
       var list = $(this).next();
       list.toggle();
-      console.log(list)
-      if ($('.month_articles').is(':visible')) {
-        $(this).html("∨");
+
+      if (list.is(':visible')) {
+        $(this).css('background-color', '#f1c40f');
+        $(this).css('border-color', '#f1c40f');
       }
       else {
-        $(this).html(">");
+        $(this).css('background-color', '#16a388');
+        $(this).css('border-color', '#16a388');
       }
     });
 

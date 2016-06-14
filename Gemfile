@@ -46,5 +46,6 @@ group :development do
 
   gem 'paperclip'
   gem 'sorcery'
+  gem 'jquery-ui-rails'
 
 end

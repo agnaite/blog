@@ -1,5 +1,6 @@
 <div class="container">
   <h1><%= @article.title %></h1>
+  <h4 class="views">published by <%= @username %> on <%= @article.created_at.strftime("%m-%d-%Y") %> (<%= @article.view_count %> views)</h4>
   <p class="article_tag_list">
     <% @article.tags.each do |tag| %>
       <%= link_to tag.name, tag_path(tag), class: "tag" %>
@@ -11,7 +12,7 @@
   <% end %>
 
   <p class="article_body"><%= @article.body %></p>
-  <% if logged_in? %>
+  <% if logged_in? && current_user == @author %>
     <div class="article_btn_group">
       <%= link_to "Edit", edit_article_path(@article), class: "edit_btn" %>
       <%= link_to "Delete", article_path(@article), method: :delete, class: "delete_btn", data: {confirm: "Really delete the article?"} %>
@@ -24,6 +25,5 @@
     <h3>Comments(<%= @article.comments.count %>)</h3>
     <%= render partial: 'articles/comment', collection: @article.comments %>
 
-    <%= link_to "<< Back to Articles List", articles_path, class: 'home_link' %>
   </div>
 </div>

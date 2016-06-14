@@ -4,13 +4,21 @@ class ArticlesController < ApplicationController
   before_filter :require_login, except: [:index, :show, :show_by_month]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.order(view_count: :desc)
   end
 
   def show
     @article = Article.find(params[:id])
+    if @article.author_id.nil?
+      @username = "Anonymous"
+    else
+      @author = Author.find_by_id(@article.author_id)
+      @username = @author.username
+    end
     @comment = Comment.new
     @comment.article_id = @article.id
+
+    @article.increment_view_count
   end
 
   def show_by_month
@@ -41,6 +49,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.author_id = current_user.id
     @article.save
 
     flash.notice = "Article '#{@article.title}' created!"

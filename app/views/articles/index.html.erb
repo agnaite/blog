@@ -1,5 +1,6 @@
 <div class="container">
   <h1>All Articles</h1>
+  <h4 class="views">(sorted by popularity)</h4>
   <ul id="articles">
     <% @articles.each do |article| %>
       <li>
@@ -7,7 +8,4 @@
       </li>
     <% end %>
   </ul>
-  <% if logged_in? %>
-    <%= link_to "Create new article", new_article_path, class: 'new_article_link' %>
-  <% end %>
 </div>

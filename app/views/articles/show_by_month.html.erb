@@ -2,13 +2,18 @@
   <h1>Articles By Month</h1>
   <ul class="month_wrap">
       <% @articles_by_month.each do |month, articles| %>
-          <li><%= month %><span>(<%= articles.length %>)</span><a class="month_dropdown">></a>
+          <li class="month_dropdown"><%= month %><span>(<%= articles.length %>)</span>  </li>
           <div class="month_articles">
-            <% articles.each do |article| %>
-              <%= link_to article.title, article_path(article.id) %><br />
-            <% end %>
+            <table style="width:100%">
+              <% articles.each do |article| %>
+                <tr>
+                  <td class="article_row"><%= link_to article.title, article_path(article.id) %></td>
+                  <td class="date_row"><%= article.created_at.strftime("%m-%d-%Y") %></td>
+                </tr>
+              <% end %>
+            </table>
           </div>
+
       <% end %>
-    </li>
   </ul>
 </div>
