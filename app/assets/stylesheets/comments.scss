@@ -75,18 +75,20 @@ $yellow: #f1c40f;
   h3 {
     margin: 0px 0 0 0;
     font-size: 16px;
+    font-weight: 400;
   }
 
   .comment {
-    background-color: #ecf0f1;
+    background-color: #FAFAFA;
     padding: 10px;
     border-radius: 10px;
     margin: 10px 0;
 
     h4 {
-      margin: 0px 0 0 0;
+      margin: 0px 0 2px 0;
       font-size: 14px;
       color: $yellow;
+      font-weight: 400;
     }
 
     .time_stamp {
@@ -97,6 +99,7 @@ $yellow: #f1c40f;
     .comment {
       font-size: 14px;
       padding: 0;
+      line-height: 1.25;
     }
   }
 }

@@ -29,10 +29,13 @@ $cloud: #ecf0f1;
 
   .tag_list {
     width: 40%;
-    margin: 40px auto;
+    margin: 20px auto;
     line-height: 2;
     text-align: center;
-
+    .delete_btn {
+      color: tomato;
+      font-weight: 600;
+    }
     li {
       list-style: none;
       font-size: 18px;
