@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>All Tags</h1>
+  <div class="tag_list">
+    <% @tags.each do |tag| %>
+      <%= link_to tag, tag_path(tag), class: 'tag' %>
+      <%= link_to "X", tag_path(tag), method: :delete, class: "delete_btn", data: {confirm: "Really delete the tag?"} %><br />
+    <% end %>
+  </div>
+  <%= link_to "<< Back to Articles List", articles_path, class: 'home_link' %>
+</div>

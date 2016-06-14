@@ -1,6 +1,10 @@
 <div class="container">
   <h1><%= @article.title %></h1>
-
+  <p class="article_tag_list">
+    <% @article.tags.each do |tag| %>
+      <%= link_to tag.name, tag_path(tag), class: "tag" %>
+    <% end %>
+  </p>
   <p class="article_body"><%= @article.body %></p>
 
   <div class="article_btn_group">
@@ -17,5 +21,4 @@
 
     <%= link_to "<< Back to Articles List", articles_path, class: 'home_link' %>
   </div>
-
 </div>
