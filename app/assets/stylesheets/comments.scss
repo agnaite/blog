@@ -2,14 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $yellow: #f1c40f;
+$gray: #7f8c8d;
+$light-gray: #FAFAFA;
 
 .comments_wrapper {
   display: block;
   margin: 80px auto;
   width: 40%;
-  color: #7f8c8d;
-  // border: 2px solid blue;
-
+  color: $gray;
 
   .post_comment {
     display: inline-block;
@@ -17,18 +17,13 @@ $yellow: #f1c40f;
   }
 
   #show_comment_form {
-    font-weight: 400;
+    font-weight: 600;
     cursor: pointer;
-    padding: 5px 5px;
-    border-radius: 4px;
-    color: $yellow;
-    border: 2px solid $yellow;
-    text-align: center;
-    font-size: 12px;
-    margin: 0 0 20px 5px;
+    padding: 5px 0px;
+    font-size: 14px;
+    margin: 0 0 20px -2px;
     &:hover {
-      color: white;
-      background-color: $yellow;
+      color: $yellow;
     }
   }
 
@@ -38,7 +33,6 @@ $yellow: #f1c40f;
       font-size: 14px;
       margin: 10px 0px 0 60px;
       position: absolute;
-      // border: 2px solid blue;
 
     }
     input,
@@ -46,7 +40,6 @@ $yellow: #f1c40f;
       padding: 10px;
       width: 50%;
       margin: 0 150px;
-      // border: 2px solid blue;
 
     }
     textarea {
@@ -67,7 +60,7 @@ $yellow: #f1c40f;
       font-weight: 800;
       &:hover {
         color: white;
-        background-color: #f1c40f;
+        background-color: $yellow;
       }
     }
   }
@@ -79,7 +72,7 @@ $yellow: #f1c40f;
   }
 
   .comment {
-    background-color: #FAFAFA;
+    background-color: $light-gray;
     padding: 10px;
     border-radius: 10px;
     margin: 10px 0;

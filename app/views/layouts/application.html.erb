@@ -8,21 +8,25 @@
 </head>
 <body>
 
+<nav>
+  <h6>
+    <div class="nav_home"><a href="/">Home</a></div>
+    <div class="nav_button month_btn"><%= link_to "Articles by Month", by_month_path %></div>
+    <div class="nav_button tags_btn"><%= link_to "Articles by Tag", tags_path %></div>
+    <% if logged_in? %>
+      <div class="nav_button logout"><%= link_to "logout", logout_path %></div>
+      <div class="user"><%= "Logged in as #{current_user.username}" %></div>
+    <% else %>
+      <div class="nav_button login"><%= link_to "login", login_path %></div>
+    <% end %>
+  </h6>
+</nav>
+
 <% if flash[:notice] -%>
   <p class="flash"><%= flash.notice %></p>
 <% end %>
 
 <%= yield %>
-
-<hr>
-  <h6>
-    <% if logged_in? %>
-      <%= "Logged in as #{current_user.email}" %>
-      <%= link_to "(logout)", logout_path %>
-    <% else %>
-      <%= link_to "(login)", login_path %>
-    <% end %>
-  </h6>
 
 </body>
 </html>

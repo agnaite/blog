@@ -4,6 +4,8 @@
 $yellow: #f1c40f;
 $green: #16a388;
 $blue: #4169E1;
+$gray: #7f8c8d;
+$light-gray: #FAFAFA;
 
 * {
   font-family: 'Menlo', sans-serif;
@@ -18,6 +20,75 @@ body {
   padding: 0;
   margin: 0;
   display: inline-block;
+
+  nav {
+    width: 100%;
+    display: block;
+    border-bottom: 3px solid $light-gray;
+    height: 60px;
+    z-index: 100;
+
+    h6 {
+      width: 100%;
+      display: inline-block;
+      .nav_home {
+        float: left;
+        padding: 0 15px;
+        font-size: 16px;
+
+        a:hover {
+          color: $yellow;
+        }
+      }
+      .user {
+        float: right;
+        padding: 10px 10px 10px 10px;
+        margin-top: -5px;
+      }
+
+      .nav_button {
+        cursor: pointer;
+        float: right;
+        width: 60px;
+        margin: -5px 15px;
+        padding: 5px 5px;
+        border-radius: 4px;
+        border: 2px solid $yellow;
+        text-align: center;
+        font-size: 11px;
+        a {
+          color: $yellow;
+        }
+        &:hover {
+          background-color: $yellow;
+
+          a {
+          color: white;
+          background-color: $yellow;
+          }
+        }
+      }
+      .tags_btn,
+      .month_btn {
+        float: left;
+        width: 120px;
+        margin: -5px 5px 5px 5px;
+        border-color: $green;
+        a {
+          color: $green;
+          &:hover {
+            color: white;
+          }
+        }
+        &:hover {
+          background-color: $green;
+          a {
+            background-color: $green;
+          }
+        }
+      }
+    }
+  }
 
   .flash {
     display: block;
@@ -71,40 +142,31 @@ body {
     }
   }
 
-    .new_article_link,
-    .home_link,
-    .tags_link {
-      display: block;
-      width: 160px;
-      margin: 40px auto;
-      padding: 10px 10px;
-      border-radius: 4px;
-      border: 2px solid $blue;
-      text-align: center;
-      font-size: 14px;
-      color: $blue;
+  .new_article_link,
+  .home_link {
+    display: block;
+    width: 160px;
+    margin: 40px auto;
+    padding: 10px 10px;
+    border-radius: 4px;
+    border: 2px solid $blue;
+    text-align: center;
+    font-size: 14px;
+    color: $blue;
 
-      &:hover {
-        color: white;
-        background-color: $blue;
-      }
+    &:hover {
+      color: white;
+      background-color: $blue;
     }
+  }
+  .new_article_link {
+    margin-bottom: 20px;
+  }
 
-    .home_link {
-      width: 220px;
-      color: $blue;
-    }
-
-    .tags_link {
-      margin-top: -20px;
-      border: 2px solid $green;
-      color: $green;
-
-      &:hover {
-        color: white;
-        background-color: $green;
-      }
-    }
+  .home_link {
+    width: 220px;
+    color: $blue;
+  }
 
   .article_btn_group {
     float: right;
@@ -116,13 +178,13 @@ body {
       padding: 5px 5px;
       border-radius: 4px;
       color: $yellow;
-      border: 2px solid #f1c40f;
+      border: 2px solid $yellow;
       text-align: center;
       font-size: 12px;
 
         &:hover {
           color: white;
-          background-color: #f1c40f;
+          background-color: $yellow;
         }
       }
     }
@@ -133,6 +195,30 @@ body {
       display: block;
       margin: 10px auto;
       padding-bottom: 20px;
+    }
+
+    .month_wrap {
+      padding: 0;
+      list-style: none;
+      display: block;
+      width: 40%;
+      margin: 40px auto;
+      line-height: 2;
+      text-align: center;
+      font-size: 18px;
+      .month_dropdown {
+        &:hover {
+          cursor: pointer;
+          color: $yellow;
+        }
+      }
+      .month_articles {
+        font-size: 16px;
+        line-height: 1.5;
+        a {
+          color: $yellow;
+        }
+      }
     }
   }
 }

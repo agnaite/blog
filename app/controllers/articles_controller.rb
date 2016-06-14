@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   include ArticlesHelper
 
-  before_filter :require_login, except: [:index, :show]
+  before_filter :require_login, except: [:index, :show, :show_by_month]
 
   def index
     @articles = Article.all
@@ -11,6 +11,28 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @comment = Comment.new
     @comment.article_id = @article.id
+  end
+
+  def show_by_month
+    @articles = Article.all
+    @articles_by_month = {
+      :January => [],
+      :February => [],
+      :March => [],
+      :April => [],
+      :May => [],
+      :June => [],
+      :July => [],
+      :August => [],
+      :September => [],
+      :October => [],
+      :November => [],
+      :December => []
+    }
+    @articles.each do |article|
+      month = article.created_at.strftime("%B")
+      @articles_by_month[month.to_sym] << article
+    end
   end
 
   def new
