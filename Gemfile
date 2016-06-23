@@ -5,6 +5,7 @@ ruby '2.1.2'
 gem 'rails', '4.2.6'
 gem 'pg'
 gem 'sorcery'
+gem 'paperclip'
 gem 'rails_12factor'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -44,7 +45,6 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'paperclip'
   gem 'jquery-ui-rails'
 
 end
