@@ -6,6 +6,7 @@ gem 'rails', '4.2.6'
 gem 'pg'
 gem 'sorcery'
 gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
 gem 'rails_12factor'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

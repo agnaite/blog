@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blogger</title>
+  <title>blog <%= @title %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,10 +11,10 @@
 <nav>
   <h6>
     <div class="nav_home"><a href="/">Home</a></div>
-    <div class="nav_button month_btn"><%= link_to "Articles by Month", by_month_path %></div>
-    <div class="nav_button tags_btn"><%= link_to "Articles by Tag", tags_path %></div>
+    <div class="nav_button month_btn"><%= link_to "Posts by month", by_month_path %></div>
+    <div class="nav_button tags_btn"><%= link_to "Posts by tag", tags_path %></div>
     <% if logged_in? %>
-      <%= link_to "Create new article", new_article_path, class: 'nav_button new_article_link' %>
+      <%= link_to "Create new post", new_article_path, class: 'nav_button new_article_link' %>
       <div class="nav_button logout"><%= link_to "logout", logout_path %></div>
       <div class="user"><%= "Logged in as #{current_user.username}" %></div>
     <% else %>

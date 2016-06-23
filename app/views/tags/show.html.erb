@@ -1,10 +1,9 @@
 <div class="container">
-  <h1>Articles Tagged with <span class="tag title_tag"><%= @tag.name %></span></h1>
+  <h1>Posts Tagged with <span class="tag title_tag"><%= @tag.name %></span></h1>
 
   <ul class="tag_list">
     <% @tag.articles.each do |article| %>
       <li><%= link_to article.title, article_path(article) %></li>
     <% end %>
   </ul>
-  <%= link_to "<< Back to Articles List", articles_path, class: 'home_link' %>
 </div>

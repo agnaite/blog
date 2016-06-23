@@ -5,10 +5,12 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all.order(view_count: :desc)
+    @title = "- home"
   end
 
   def show
     @article = Article.find(params[:id])
+    @title = "- \"#{@article.title}\""
     if @article.author_id.nil?
       @username = "Anonymous"
     else
@@ -23,6 +25,7 @@ class ArticlesController < ApplicationController
 
   def show_by_month
     @articles = Article.all
+    @title = "- posts by month"
     @articles_by_month = {
       :January => [],
       :February => [],
@@ -45,6 +48,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @title = "- new post"
   end
 
   def create
@@ -52,7 +56,7 @@ class ArticlesController < ApplicationController
     @article.author_id = current_user.id
     @article.save
 
-    flash.notice = "Article '#{@article.title}' created!"
+    flash.notice = "Post '#{@article.title}' created!"
 
     redirect_to article_path(@article)
   end
